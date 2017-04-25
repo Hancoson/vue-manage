@@ -26,149 +26,149 @@
 </template>
 
 <script>
-    import IEcharts from 'vue-echarts-v3';
-    export default {
-        components: {
-            IEcharts
+import IEcharts from 'vue-echarts-v3';
+export default {
+    components: {
+        IEcharts
+    },
+    data: () => ({
+        line: {
+            color: ["#20a0ff", "#13CE66", "#F7BA2A", "#FF4949"],
+            title: {
+                text: '曲线图'
+            },
+            xAxis: {
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            },
+            yAxis: {},
+            series: [{
+                name: "销量",
+                type: "line",
+                data: [5, 20, 36, 10, 10, 20]
+            }]
         },
-        data: () => ({
-            line: {
-                color: ["#20a0ff", "#13CE66", "#F7BA2A", "#FF4949"],
-                title: {
-                    text: '曲线图'
-                },
-                xAxis: {
-                    data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
-                },
-                yAxis: {},
-                series: [{
-                    name: "销量",
-                    type: "line",
-                    data: [5, 20, 36, 10, 10, 20]
-                }]
+        bar: {
+            color: ["#20a0ff", "#13CE66", "#F7BA2A", "#FF4949"],
+            title: {
+                text: '柱状图'
             },
-            bar: {
-                color: ["#20a0ff", "#13CE66", "#F7BA2A", "#FF4949"],
-                title: {
-                    text: '柱状图'
-                },
-                xAxis: {
-                    data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
-                },
-                yAxis: {},
-                series: [{
-                    name: "销量",
-                    type: "bar",
-                    data: [5, 20, 36, 10, 10, 20]
-                }]
+            xAxis: {
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
             },
-            pie: {
-                color: ["#20a0ff", "#13CE66", "#F7BA2A", "#FF4949", "#61a0a8"],
-                title: {
-                    text: '饼状图',
-                    x: 'center'
+            yAxis: {},
+            series: [{
+                name: "销量",
+                type: "bar",
+                data: [5, 20, 36, 10, 10, 20]
+            }]
+        },
+        pie: {
+            color: ["#20a0ff", "#13CE66", "#F7BA2A", "#FF4949", "#61a0a8"],
+            title: {
+                text: '饼状图',
+                x: 'center'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋"]
+            },
+            series: [{
+                name: '销量',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%', '50%'],
+                data: [{
+                    value: 335,
+                    name: '衬衫'
                 },
-                tooltip: {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                {
+                    value: 310,
+                    name: '羊毛衫'
                 },
-                legend: {
-                    orient: 'vertical',
-                    left: 'left',
-                    data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋"]
+                {
+                    value: 234,
+                    name: '雪纺衫'
                 },
-                series: [{
-                    name: '销量',
-                    type: 'pie',
-                    radius: '55%',
-                    center: ['50%', '50%'],
-                    data: [{
-                            value: 335,
-                            name: '衬衫'
-                        },
-                        {
-                            value: 310,
-                            name: '羊毛衫'
-                        },
-                        {
-                            value: 234,
-                            name: '雪纺衫'
-                        },
-                        {
-                            value: 135,
-                            name: '裤子'
-                        },
-                        {
-                            value: 548,
-                            name: '高跟鞋'
-                        }
-                    ],
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
+                {
+                    value: 135,
+                    name: '裤子'
+                },
+                {
+                    value: 548,
+                    name: '高跟鞋'
+                }
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
                     }
-                }]
+                }
+            }]
+        },
+        pie_radius: {
+            color: ["#20a0ff", "#13CE66", "#F7BA2A", "#FF4949", "#61a0a8"],
+            title: {
+                text: '环形图',
+                x: 'center'
             },
-            pie_radius: {
-                color: ["#20a0ff", "#13CE66", "#F7BA2A", "#FF4949", "#61a0a8"],
-                title: {
-                    text: '环形图',
-                    x: 'center'
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c} ({d}%)"
+            },
+            legend: {
+                orient: 'vertical',
+                left: 'left',
+                data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋"]
+            },
+            series: [{
+                name: '销量',
+                type: 'pie',
+                radius: ['40%', '60%'],
+                data: [{
+                    value: 335,
+                    name: '衬衫'
                 },
-                tooltip: {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                {
+                    value: 310,
+                    name: '羊毛衫'
                 },
-                legend: {
-                    orient: 'vertical',
-                    left: 'left',
-                    data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋"]
+                {
+                    value: 234,
+                    name: '雪纺衫'
                 },
-                series: [{
-                    name: '销量',
-                    type: 'pie',
-                    radius: ['40%', '60%'],
-                    data: [{
-                            value: 335,
-                            name: '衬衫'
-                        },
-                        {
-                            value: 310,
-                            name: '羊毛衫'
-                        },
-                        {
-                            value: 234,
-                            name: '雪纺衫'
-                        },
-                        {
-                            value: 135,
-                            name: '裤子'
-                        },
-                        {
-                            value: 548,
-                            name: '高跟鞋'
-                        }
-                    ],
-                    itemStyle: {
-                        emphasis: {
-                            shadowBlur: 10,
-                            shadowOffsetX: 0,
-                            shadowColor: 'rgba(0, 0, 0, 0.5)'
-                        }
+                {
+                    value: 135,
+                    name: '裤子'
+                },
+                {
+                    value: 548,
+                    name: '高跟鞋'
+                }
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
                     }
-                }]
-            }
-        })
-    }
+                }
+            }]
+        }
+    })
+}
 </script>
 
 <style scoped>
-    .echarts {
-        float: left;
-        width: 500px;
-        height: 400px;
-    }
+.echarts {
+    float: left;
+    width: 500px;
+    height: 400px;
+}
 </style>
