@@ -3,16 +3,15 @@ var config = require('../config')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path) {
-  var assetsSubDirectory = process.env.NODE_ENV === 'production'
-    ? config.build.assetsSubDirectory
-    : config.dev.assetsSubDirectory
+  var assetsSubDirectory = process.env.NODE_ENV === 'production' ?
+    config.build.assetsSubDirectory : config.dev.assetsSubDirectory
   return path.posix.join(assetsSubDirectory, _path)
 }
 
 exports.cssLoaders = function (options) {
   options = options || {}
-  // generate loader string to be used with extract text plugin
-  function generateLoaders (loaders) {
+    // generate loader string to be used with extract text plugin
+  function generateLoaders(loaders) {
     var sourceLoader = loaders.map(function (loader) {
       var extraParamChar
       if (/\?/.test(loader)) {
@@ -25,13 +24,9 @@ exports.cssLoaders = function (options) {
       return loader + (options.sourceMap ? extraParamChar + 'sourceMap' : '')
     }).join('!')
 
-    // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
-      return ExtractTextPlugin.extract({
-        use: sourceLoader,
-        fallback: 'vue-style-loader'
-      })
+      return ExtractTextPlugin.extract('vue-style-loader', sourceLoader)
     } else {
       return ['vue-style-loader', sourceLoader].join('!')
     }
