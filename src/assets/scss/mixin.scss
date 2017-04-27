@@ -1,0 +1,70 @@
+/*
+ * @Author: Guoxing.han 
+ * @Date: 2017-04-27 15:45:14 
+ * @Last Modified by: Guoxing.han 
+ * @version 0.0.1 
+  */
+
+// login 
+$bg-color:#324157;
+//header
+$head-bg:#324157;
+$head-color:#fff;
+//border-box
+@mixin border-box {
+  box-sizing: border-box;
+}
+
+//transition 动画
+@mixin transition {
+  transition: all 0.3s ease;
+}
+
+//截取长度显示省略号
+@mixin ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+//opacity
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+
+//white-space
+@mixin white-nowrap {
+  white-space: nowrap
+}
+
+
+/**
+ * flex
+**/
+
+@mixin flexbox {
+  display: flex;
+}
+
+@mixin flex($num:1) {
+  flex: $num
+}
+
+//fixed
+@mixin fixedTop($top:0) {
+  position: fixed;
+  left: 0;
+  top: $top;
+}
+
+@mixin fixedBottom($bottom:0) {
+  position: fixed;
+  left: 0;
+  bottom: $bottom;
+}
+
+//fontSize
+@mixin font($size:14) {
+  font-size: $size
+}

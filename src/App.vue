@@ -4,6 +4,5 @@
     </div>
 </template>
 <style>
-/*@import "../static/css/main.css";
-@import "../static/css/color-dark.css";*/
+@import "./assets/scss/common.scss";
 </style>

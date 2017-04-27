@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  data: function () {
+  data: () => {
     return {
       ruleForm: {
         username: '',
@@ -50,7 +50,7 @@ export default {
   methods: {
     submitForm(formName) {
       const self = this;
-      self.$refs[formName].validate((valid) => {
+      self.$refs[formName].validate(valid => {
         if (valid) {
           localStorage.setItem('ms_username', self.ruleForm.username);
           self.$router.push('/readme');
@@ -64,41 +64,44 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import '../../../assets/scss/mixin';
 .login-wrap {
+  background: $bg-color;
   position: relative;
   width: 100%;
   height: 100%;
-}
 
-.ms-title {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  margin-top: -230px;
-  text-align: center;
-  font-size: 30px;
-  color: #fff;
-}
 
-.ms-login {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 300px;
-  height: 160px;
-  margin: -150px 0 0 -190px;
-  padding: 40px;
-  border-radius: 5px;
-  background: #fff;
-}
+  .ms-title {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: -230px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+  }
 
-.login-btn {
-  text-align: center;
-}
+  .ms-login {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 300px;
+    height: 160px;
+    margin: -150px 0 0 -190px;
+    padding: 40px;
+    border-radius: 5px;
+    background: #fff;
+  }
 
-.login-btn button {
-  width: 100%;
-  height: 36px;
+  .login-btn {
+    text-align: center;
+  }
+
+  .login-btn button {
+    width: 100%;
+    height: 36px;
+  }
 }
 </style>
