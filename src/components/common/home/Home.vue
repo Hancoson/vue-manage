@@ -18,12 +18,13 @@
 </template>
 
 <script>
-import vHeader from '../layout/Header'
+import vHead from '../layout/Header'
 import vSidebar from '../layout/Sidebar'
 
 export default {
-    components: {        
-        vHeader, vSidebar
+
+    components: {
+        vHead, vSidebar
     }
 }
 </script>
