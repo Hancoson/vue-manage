@@ -21,6 +21,9 @@ export default new Router({
         path: '/',
         component: resolve => require(['../components/pages/about/Index.vue'], resolve)
       }, {
+        path: 'fun',
+        component: resolve => require(['../components/pages/about/Fun.vue'], resolve)
+      }, {
         path: 'use',
         component: resolve => require(['../components/pages/about/Use.vue'], resolve)
       }]
@@ -29,11 +32,14 @@ export default new Router({
       path: '/m',
       component: resolve => require(['../components/common/home/Home.vue'], resolve),
       children: [{
+        path: '/',
+        component: resolve => require(['../components/pages/m/Index.vue'], resolve)
+      }, {
         path: '/m/table',
         component: resolve => require(['../components/pages/table/Table.vue'], resolve)
       }, {
-        path: '/m/use',
-        component: resolve => require(['../components/pages/about/Use.vue'], resolve)
+        path: '/m/table-sort',
+        component: resolve => require(['../components/pages/table/TableSort.vue'], resolve)
       }]
     },
     {

@@ -8,8 +8,8 @@
   <header class="header-wrap">
     <div class="logo fl">后台管理</div>
     <el-menu index="about" theme="dark" :default-active="activeIndex" class="el-menu-demo fl" mode="horizontal" @select="handleSelect" router>
-      <el-menu-item index="/about">关于系统</el-menu-item>
-      <el-menu-item index="/m/table">后台管理</el-menu-item>
+      <el-menu-item index="/about">关于</el-menu-item>
+      <el-menu-item index="/m">后台管理</el-menu-item>
     </el-menu>
   </header>
 </template>
@@ -20,7 +20,7 @@ import { bus } from '../../../utils/bus.js';
 export default {
   data() {
     return {
-      activeIndex: this.$route.path.replace('/', '') === 'about' ? '/about' : '/m/table'
+      activeIndex: this.$route.path.replace('/', '').split('/')[0]  === 'about' ? '/about' : '/m'
     };
   },
   methods: {

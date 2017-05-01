@@ -5,5 +5,5 @@
  * @version 0.0.1 
   */
 <template>
-<div>about-index</div>
+<div>关于首页</div>
 </template>
