@@ -41,8 +41,7 @@ import { bus } from '../../../utils/bus.js';
 export default {
   data() {
     return {
-      thePath: this.$route.path.replace('/', '').split('/')[0] ,
-      // activeIndex: this.$route.path.replace('/', '') === 'about' ? '/about' : '/m/table'
+      thePath: this.$route.path.replace('/', '').split('/')[0]
     }
   },
 
