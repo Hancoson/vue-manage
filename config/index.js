@@ -21,7 +21,7 @@ module.exports = {
     env: {
       NODE_ENV: '"development"'
     },
-    port: 8089,
+    port: 8090,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     /*proxyTable: { //代理设置
